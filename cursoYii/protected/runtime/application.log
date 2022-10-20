@@ -1,0 +1,264 @@
+2022/10/20 23:00:38 [error] [exception.CException] CException: Property "CUrlManager.UrlSuffix" is not defined. in C:\laragon\www\YIICurso\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\laragon\www\YIICurso\framework\YiiBase.php(227): CComponent->__set('UrlSuffix', '.html')
+#1 C:\laragon\www\YIICurso\framework\base\CModule.php(393): YiiBase::createComponent(Array)
+#2 C:\laragon\www\YIICurso\framework\base\CApplication.php(531): CModule->getComponent('urlManager')
+#3 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(140): CApplication->getUrlManager()
+#4 C:\laragon\www\YIICurso\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\laragon\www\YIICurso\cursoYii\index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/YIICurso/cursoYii/index.php/site/contact
+HTTP_REFERER=http://localhost/YIICurso/cursoYii/index.php/site/index
+---
+2022/10/20 23:06:33 [error] [exception.ParseError] ParseError: syntax error, unexpected '<' in C:\laragon\www\YIICurso\cursoYii\protected\views\Hello\index.php:1
+Stack trace:
+#0 C:\laragon\www\YIICurso\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\laragon\\www\\...', Array, true)
+#1 C:\laragon\www\YIICurso\framework\web\CController.php(872): CBaseController->renderFile('C:\\laragon\\www\\...', Array, true)
+#2 C:\laragon\www\YIICurso\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#3 C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php(7): CController->render('index', Array)
+#4 C:\laragon\www\YIICurso\framework\web\actions\CInlineAction.php(49): HelloController->actionIndex()
+#5 C:\laragon\www\YIICurso\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\laragon\www\YIICurso\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\laragon\www\YIICurso\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(141): CWebApplication->runController('Hello')
+#10 C:\laragon\www\YIICurso\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\laragon\www\YIICurso\cursoYii\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/YIICurso/cursoYii/Hello
+---
+2022/10/20 23:06:41 [error] [php] Undefined variable: name (C:\laragon\www\YIICurso\cursoYii\protected\views\Hello\index.php:1)
+Stack trace:
+#0 C:\laragon\www\YIICurso\framework\web\CBaseController.php(126): require()
+#1 C:\laragon\www\YIICurso\framework\web\CBaseController.php(95): HelloController->renderInternal()
+#2 C:\laragon\www\YIICurso\framework\web\CController.php(872): HelloController->renderFile()
+#3 C:\laragon\www\YIICurso\framework\web\CController.php(785): HelloController->renderPartial()
+#4 C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php(7): HelloController->render()
+#5 C:\laragon\www\YIICurso\framework\web\actions\CInlineAction.php(49): HelloController->actionIndex()
+#6 C:\laragon\www\YIICurso\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\laragon\www\YIICurso\framework\web\CController.php(286): HelloController->runAction()
+#8 C:\laragon\www\YIICurso\framework\web\CController.php(265): HelloController->runActionWithFilters()
+#9 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(282): HelloController->run()
+#10 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\laragon\www\YIICurso\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\laragon\www\YIICurso\cursoYii\index.php(13): CWebApplication->run()
+REQUEST_URI=/YIICurso/cursoYii/Hello
+in C:\laragon\www\YIICurso\cursoYii\protected\views\Hello\index.php (1)
+in C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php (7)
+in C:\laragon\www\YIICurso\cursoYii\index.php (13)
+2022/10/20 23:17:02 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yii_curso.users' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `Users`.
+in C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php (6)
+in C:\laragon\www\YIICurso\cursoYii\index.php (13)
+2022/10/20 23:17:02 [error] [exception.CDbException] CDbException: The table "Users" for active record class "Users" cannot be found in the database. in C:\laragon\www\YIICurso\framework\db\ar\CActiveRecord.php:2391
+Stack trace:
+#0 C:\laragon\www\YIICurso\framework\db\ar\CActiveRecord.php(413): CActiveRecordMetaData->__construct(Object(Users))
+#1 C:\laragon\www\YIICurso\framework\db\ar\CActiveRecord.php(663): CActiveRecord->getMetaData()
+#2 C:\laragon\www\YIICurso\framework\db\ar\CActiveRecord.php(1358): CActiveRecord->getTableSchema()
+#3 C:\laragon\www\YIICurso\framework\db\ar\CActiveRecord.php(1478): CActiveRecord->query(Object(CDbCriteria), true)
+#4 C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php(6): CActiveRecord->findAll()
+#5 C:\laragon\www\YIICurso\framework\web\actions\CInlineAction.php(49): HelloController->actionIndex()
+#6 C:\laragon\www\YIICurso\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\laragon\www\YIICurso\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\laragon\www\YIICurso\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(282): CController->run('')
+#10 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(141): CWebApplication->runController('Hello')
+#11 C:\laragon\www\YIICurso\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\laragon\www\YIICurso\cursoYii\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/YIICurso/cursoYii/Hello
+---
+2022/10/20 23:17:27 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yii_curso.tbl_users' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_users`.
+in C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php (6)
+in C:\laragon\www\YIICurso\cursoYii\index.php (13)
+2022/10/20 23:17:27 [error] [exception.CDbException] CDbException: The table "tbl_users" for active record class "Users" cannot be found in the database. in C:\laragon\www\YIICurso\framework\db\ar\CActiveRecord.php:2391
+Stack trace:
+#0 C:\laragon\www\YIICurso\framework\db\ar\CActiveRecord.php(413): CActiveRecordMetaData->__construct(Object(Users))
+#1 C:\laragon\www\YIICurso\framework\db\ar\CActiveRecord.php(663): CActiveRecord->getMetaData()
+#2 C:\laragon\www\YIICurso\framework\db\ar\CActiveRecord.php(1358): CActiveRecord->getTableSchema()
+#3 C:\laragon\www\YIICurso\framework\db\ar\CActiveRecord.php(1478): CActiveRecord->query(Object(CDbCriteria), true)
+#4 C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php(6): CActiveRecord->findAll()
+#5 C:\laragon\www\YIICurso\framework\web\actions\CInlineAction.php(49): HelloController->actionIndex()
+#6 C:\laragon\www\YIICurso\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\laragon\www\YIICurso\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\laragon\www\YIICurso\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(282): CController->run('')
+#10 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(141): CWebApplication->runController('Hello')
+#11 C:\laragon\www\YIICurso\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\laragon\www\YIICurso\cursoYii\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/YIICurso/cursoYii/Hello
+---
+2022/10/20 23:17:41 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yii_curso.users' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `Users`.
+in C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php (6)
+in C:\laragon\www\YIICurso\cursoYii\index.php (13)
+2022/10/20 23:17:41 [error] [exception.CDbException] CDbException: The table "Users" for active record class "Users" cannot be found in the database. in C:\laragon\www\YIICurso\framework\db\ar\CActiveRecord.php:2391
+Stack trace:
+#0 C:\laragon\www\YIICurso\framework\db\ar\CActiveRecord.php(413): CActiveRecordMetaData->__construct(Object(Users))
+#1 C:\laragon\www\YIICurso\framework\db\ar\CActiveRecord.php(663): CActiveRecord->getMetaData()
+#2 C:\laragon\www\YIICurso\framework\db\ar\CActiveRecord.php(1358): CActiveRecord->getTableSchema()
+#3 C:\laragon\www\YIICurso\framework\db\ar\CActiveRecord.php(1478): CActiveRecord->query(Object(CDbCriteria), true)
+#4 C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php(6): CActiveRecord->findAll()
+#5 C:\laragon\www\YIICurso\framework\web\actions\CInlineAction.php(49): HelloController->actionIndex()
+#6 C:\laragon\www\YIICurso\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\laragon\www\YIICurso\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\laragon\www\YIICurso\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(282): CController->run('')
+#10 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(141): CWebApplication->runController('Hello')
+#11 C:\laragon\www\YIICurso\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\laragon\www\YIICurso\cursoYii\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/YIICurso/cursoYii/Hello
+---
+2022/10/20 23:20:31 [error] [exception.ParseError] ParseError: syntax error, unexpected ')', expecting '[' in C:\laragon\www\YIICurso\cursoYii\protected\views\Hello\index.php:3
+Stack trace:
+#0 C:\laragon\www\YIICurso\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\laragon\\www\\...', Array, true)
+#1 C:\laragon\www\YIICurso\framework\web\CController.php(872): CBaseController->renderFile('C:\\laragon\\www\\...', Array, true)
+#2 C:\laragon\www\YIICurso\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#3 C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php(8): CController->render('index', Array)
+#4 C:\laragon\www\YIICurso\framework\web\actions\CInlineAction.php(49): HelloController->actionIndex()
+#5 C:\laragon\www\YIICurso\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\laragon\www\YIICurso\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\laragon\www\YIICurso\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(141): CWebApplication->runController('Hello')
+#10 C:\laragon\www\YIICurso\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\laragon\www\YIICurso\cursoYii\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/YIICurso/cursoYii/Hello
+---
+2022/10/20 23:21:36 [error] [exception.ParseError] ParseError: syntax error, unexpected ')', expecting '[' in C:\laragon\www\YIICurso\cursoYii\protected\views\Hello\index.php:3
+Stack trace:
+#0 C:\laragon\www\YIICurso\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\laragon\\www\\...', Array, true)
+#1 C:\laragon\www\YIICurso\framework\web\CController.php(872): CBaseController->renderFile('C:\\laragon\\www\\...', Array, true)
+#2 C:\laragon\www\YIICurso\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#3 C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php(8): CController->render('index', Array)
+#4 C:\laragon\www\YIICurso\framework\web\actions\CInlineAction.php(49): HelloController->actionIndex()
+#5 C:\laragon\www\YIICurso\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\laragon\www\YIICurso\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\laragon\www\YIICurso\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(141): CWebApplication->runController('Hello')
+#10 C:\laragon\www\YIICurso\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\laragon\www\YIICurso\cursoYii\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/YIICurso/cursoYii/Hello
+---
+2022/10/20 23:21:37 [error] [exception.ParseError] ParseError: syntax error, unexpected ')', expecting '[' in C:\laragon\www\YIICurso\cursoYii\protected\views\Hello\index.php:3
+Stack trace:
+#0 C:\laragon\www\YIICurso\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\laragon\\www\\...', Array, true)
+#1 C:\laragon\www\YIICurso\framework\web\CController.php(872): CBaseController->renderFile('C:\\laragon\\www\\...', Array, true)
+#2 C:\laragon\www\YIICurso\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#3 C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php(8): CController->render('index', Array)
+#4 C:\laragon\www\YIICurso\framework\web\actions\CInlineAction.php(49): HelloController->actionIndex()
+#5 C:\laragon\www\YIICurso\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\laragon\www\YIICurso\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\laragon\www\YIICurso\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(141): CWebApplication->runController('Hello')
+#10 C:\laragon\www\YIICurso\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\laragon\www\YIICurso\cursoYii\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/YIICurso/cursoYii/Hello
+---
+2022/10/20 23:21:37 [error] [exception.ParseError] ParseError: syntax error, unexpected ')', expecting '[' in C:\laragon\www\YIICurso\cursoYii\protected\views\Hello\index.php:3
+Stack trace:
+#0 C:\laragon\www\YIICurso\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\laragon\\www\\...', Array, true)
+#1 C:\laragon\www\YIICurso\framework\web\CController.php(872): CBaseController->renderFile('C:\\laragon\\www\\...', Array, true)
+#2 C:\laragon\www\YIICurso\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#3 C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php(8): CController->render('index', Array)
+#4 C:\laragon\www\YIICurso\framework\web\actions\CInlineAction.php(49): HelloController->actionIndex()
+#5 C:\laragon\www\YIICurso\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\laragon\www\YIICurso\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\laragon\www\YIICurso\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(141): CWebApplication->runController('Hello')
+#10 C:\laragon\www\YIICurso\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\laragon\www\YIICurso\cursoYii\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/YIICurso/cursoYii/Hello
+---
+2022/10/20 23:21:38 [error] [exception.ParseError] ParseError: syntax error, unexpected ')', expecting '[' in C:\laragon\www\YIICurso\cursoYii\protected\views\Hello\index.php:3
+Stack trace:
+#0 C:\laragon\www\YIICurso\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\laragon\\www\\...', Array, true)
+#1 C:\laragon\www\YIICurso\framework\web\CController.php(872): CBaseController->renderFile('C:\\laragon\\www\\...', Array, true)
+#2 C:\laragon\www\YIICurso\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#3 C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php(8): CController->render('index', Array)
+#4 C:\laragon\www\YIICurso\framework\web\actions\CInlineAction.php(49): HelloController->actionIndex()
+#5 C:\laragon\www\YIICurso\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\laragon\www\YIICurso\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\laragon\www\YIICurso\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(141): CWebApplication->runController('Hello')
+#10 C:\laragon\www\YIICurso\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\laragon\www\YIICurso\cursoYii\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/YIICurso/cursoYii/Hello
+---
+2022/10/20 23:21:38 [error] [exception.ParseError] ParseError: syntax error, unexpected ')', expecting '[' in C:\laragon\www\YIICurso\cursoYii\protected\views\Hello\index.php:3
+Stack trace:
+#0 C:\laragon\www\YIICurso\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\laragon\\www\\...', Array, true)
+#1 C:\laragon\www\YIICurso\framework\web\CController.php(872): CBaseController->renderFile('C:\\laragon\\www\\...', Array, true)
+#2 C:\laragon\www\YIICurso\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#3 C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php(8): CController->render('index', Array)
+#4 C:\laragon\www\YIICurso\framework\web\actions\CInlineAction.php(49): HelloController->actionIndex()
+#5 C:\laragon\www\YIICurso\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\laragon\www\YIICurso\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\laragon\www\YIICurso\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(141): CWebApplication->runController('Hello')
+#10 C:\laragon\www\YIICurso\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\laragon\www\YIICurso\cursoYii\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/YIICurso/cursoYii/Hello
+---
+2022/10/20 23:21:38 [error] [exception.ParseError] ParseError: syntax error, unexpected ')', expecting '[' in C:\laragon\www\YIICurso\cursoYii\protected\views\Hello\index.php:3
+Stack trace:
+#0 C:\laragon\www\YIICurso\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\laragon\\www\\...', Array, true)
+#1 C:\laragon\www\YIICurso\framework\web\CController.php(872): CBaseController->renderFile('C:\\laragon\\www\\...', Array, true)
+#2 C:\laragon\www\YIICurso\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#3 C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php(8): CController->render('index', Array)
+#4 C:\laragon\www\YIICurso\framework\web\actions\CInlineAction.php(49): HelloController->actionIndex()
+#5 C:\laragon\www\YIICurso\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\laragon\www\YIICurso\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\laragon\www\YIICurso\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(141): CWebApplication->runController('Hello')
+#10 C:\laragon\www\YIICurso\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\laragon\www\YIICurso\cursoYii\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/YIICurso/cursoYii/Hello
+---
+2022/10/20 23:21:38 [error] [exception.ParseError] ParseError: syntax error, unexpected ')', expecting '[' in C:\laragon\www\YIICurso\cursoYii\protected\views\Hello\index.php:3
+Stack trace:
+#0 C:\laragon\www\YIICurso\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\laragon\\www\\...', Array, true)
+#1 C:\laragon\www\YIICurso\framework\web\CController.php(872): CBaseController->renderFile('C:\\laragon\\www\\...', Array, true)
+#2 C:\laragon\www\YIICurso\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#3 C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php(8): CController->render('index', Array)
+#4 C:\laragon\www\YIICurso\framework\web\actions\CInlineAction.php(49): HelloController->actionIndex()
+#5 C:\laragon\www\YIICurso\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\laragon\www\YIICurso\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\laragon\www\YIICurso\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(141): CWebApplication->runController('Hello')
+#10 C:\laragon\www\YIICurso\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\laragon\www\YIICurso\cursoYii\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/YIICurso/cursoYii/Hello
+---
+2022/10/20 23:21:38 [error] [exception.ParseError] ParseError: syntax error, unexpected ')', expecting '[' in C:\laragon\www\YIICurso\cursoYii\protected\views\Hello\index.php:3
+Stack trace:
+#0 C:\laragon\www\YIICurso\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\laragon\\www\\...', Array, true)
+#1 C:\laragon\www\YIICurso\framework\web\CController.php(872): CBaseController->renderFile('C:\\laragon\\www\\...', Array, true)
+#2 C:\laragon\www\YIICurso\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#3 C:\laragon\www\YIICurso\cursoYii\protected\controllers\HelloController.php(8): CController->render('index', Array)
+#4 C:\laragon\www\YIICurso\framework\web\actions\CInlineAction.php(49): HelloController->actionIndex()
+#5 C:\laragon\www\YIICurso\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\laragon\www\YIICurso\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\laragon\www\YIICurso\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(141): CWebApplication->runController('Hello')
+#10 C:\laragon\www\YIICurso\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\laragon\www\YIICurso\cursoYii\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/YIICurso/cursoYii/Hello
+---
