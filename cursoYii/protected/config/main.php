@@ -8,7 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Curso YII Básico',
-    'theme' => 'classic',
+    'theme' => 'principal',
 	// preloading 'log' component
 	'preload'=>array('log'),
 
