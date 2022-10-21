@@ -84,7 +84,7 @@
             <div class="container">
                 <div class="atf-main-header-in">
                     <div class="atf-main-header-left">
-                        <a class="atf-site-branding atf-white-logo" href="index.html"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/img/logo.png" alt="Logo"></a>
+                        <a class="atf-site-branding atf-white-logo" href="<?php echo Yii::app()->request->baseUrl; ?>>"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/img/logo.png" alt="Logo"></a>
                     </div>
 
                     <div class="nav-right-part nav-right-part-mobile">
@@ -97,6 +97,7 @@
 
                     <div class="atf-main-header-right">
                         <div class="atf-nav">
+                     
                             <div id="mainmenu">
                                 <?php $this->widget('zii.widgets.CMenu',array(
                                     'htmlOptions' => array("class" => "atf-nav-list atf-onepage-nav"),
@@ -116,11 +117,17 @@
         </div><!--- END MAIN HEADER -->
     </header>
     <!-- End Header Section -->
-    
-    <?php if(isset($this->breadcrumbs)):?>
-        <?php $this->widget('zii.widgets.CBreadcrumbs', array(
-            'links'=>$this->breadcrumbs,
-        )); ?><!-- breadcrumbs -->
+
+    <?php if(isset($this->breadcrumbs) and $this->breadcrumbs !==array()):?>
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span12">
+                <?php $this->widget('zii.widgets.CBreadcrumbs', array(
+                    'links'=>$this->breadcrumbs,
+                )); ?><!-- breadcrumbs -->
+            </div>
+        </div>
+    </div>
     <?php endif?>
     
     <?php echo $content ?>

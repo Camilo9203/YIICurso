@@ -30,6 +30,7 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
+        $this->layout= "main";
 		$this->render('index');
 	}
 
@@ -52,6 +53,7 @@ class SiteController extends Controller
 	 */
 	public function actionContact()
 	{
+        $this->layout = 'main';
 		$model=new ContactForm;
 		if(isset($_POST['ContactForm']))
 		{
@@ -78,7 +80,8 @@ class SiteController extends Controller
 	 */
 	public function actionLogin()
 	{
-		$model=new LoginForm;
+        $this->layout= "main";
+        $model=new LoginForm;
 
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
