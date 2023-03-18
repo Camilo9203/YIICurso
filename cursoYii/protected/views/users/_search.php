@@ -11,23 +11,20 @@
 	'method'=>'get',
 )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
+	<div class="form-group col-md-12">
+		<?php echo $form->textField($model,'id', array('class' => 'form-control', 'placeholder' => 'ID')); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'username'); ?>
-		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>128)); ?>
+	<div class="form-group col-md-12">
+		<?php echo $form->textField($model,'username',array('class' => 'form-control', 'placeholder' => 'Username', 'size'=>60,'maxlength'=>128)); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>128)); ?>
+	<div class="form-group col-md-12">
+		<?php echo $form->textField($model,'email',array('class' => 'form-control', 'placeholder' => 'Username', 'size'=>60,'maxlength'=>128)); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo CHtml::submitButton('Search', array('class' => 'btn btn-dark btn-sm')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

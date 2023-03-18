@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
+<div class="form contact mr-lg-5">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'users-form',
@@ -19,26 +19,23 @@
 
 	<?php echo $form->errorSummary($model, null, null, array('class'=>'alert alert-danger')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>128)); ?>
+    <div class="form-group col-md-12">
+     <?php echo $form->textField($model,'username',array('class' => 'form-control', 'placeholder' => 'Username', 'size' => 60,'maxlength' => 128)); ?>
 		<?php echo $form->error($model,'username', array('class' => 'text-danger')); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password',array('size'=>60,'maxlength'=>128)); ?>
+	<div class="form-group col-md-12">
+		<?php echo $form->passwordField($model,'password',array('class' => 'form-control', 'placeholder' => 'Password', 'size'=>60,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'password', array('class' => 'text-danger')); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>128)); ?>
+	<div class="form-group col-md-12">
+		<?php echo $form->textField($model,'email',array('class' => 'form-control', 'placeholder' => 'Email', 'size'=>60,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'email', array('class' => 'text-danger')); ?>
 	</div>
-
+    <br>
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class' => 'btn btn-dark')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

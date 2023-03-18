@@ -15,15 +15,22 @@ $this->menu=array(
 	array('label'=>'Manage Users', 'url'=>array('admin')),
 );
 ?>
-
-<h1>View Users #<?php echo $model->id; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'username',
-		'password',
-		'email',
-	),
-)); ?>
+<div class="container">
+    <div class="row-fluid">
+        <div class="span12">
+            <br>
+            <h1>View User: <?php echo $model->username; ?></h1>
+            <?php $this->widget('zii.widgets.CDetailView', array(
+                'data'=>$model,
+                'htmlOptions' => array('class' => 'table table-striped'),
+                'attributes'=>array(
+                    'id',
+                    'username',
+                    'password',
+                    'email',
+                ),
+            )); ?>
+            <br><br>
+        </div>
+    </div>
+</div>

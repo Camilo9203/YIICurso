@@ -13,7 +13,7 @@ $this->menu = array(
     array('label' => 'Manage users', 'url' => array('admin')),
 );
 ?>
-<div class="atf-content clearfix">    
+<div class="atf-content clearfix"><br>    
     <h1>Usuarios registrados</h1>
     <?php $this->widget('zii.widgets.CListView', array(
         'dataProvider'=>$dataProvider,

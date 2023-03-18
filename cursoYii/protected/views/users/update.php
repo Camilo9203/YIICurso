@@ -17,7 +17,12 @@ $this->menu=array(
 	array('label'=>'Manage Users', 'url'=>array('admin')),
 );
 ?>
-
-<h1>Update User <?php echo $model->username; ?></h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="container">
+    <div class="row-fluid">
+        <div class="span12">
+            <br>
+            <h1>Update User: <?php echo $model->username; ?></h1>
+            <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        </div>
+    </div>
+</div><br><br>
