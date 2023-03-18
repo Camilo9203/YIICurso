@@ -1,3 +1,5 @@
+<!-- Latest jQuery -->
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/jquery-1.12.4.min.js"></script>
 <?php
 /* @var $this UsersController */
 /* @var $model Users */
@@ -16,6 +18,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Users <?php echo $model->id; ?></h1>
+<h1>Update User <?php echo $model->username; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

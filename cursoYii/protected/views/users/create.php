@@ -1,3 +1,5 @@
+<!-- Latest jQuery -->
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/jquery-1.12.4.min.js"></script>
 <?php
 /* @var $this UsersController */
 /* @var $model Users */
