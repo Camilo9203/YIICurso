@@ -1,8 +1,28 @@
-<h1>Countries</h1>
-<?php foreach ($countries as $data): ?>
-<h3>
-    <?php echo $data->name ?>
-    <small><?php echo $data->status==1 ? 'Enabled' : 'Disabled'; ?> </small>
-</h3>
+<!-- Latest jQuery -->
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/jquery-1.12.4.min.js"></script>
+<?php
+/* @var $this CountriesController */
+/* @var $dataProvider CActiveDataProvider */
 
-<?php endforeach; ?>
+$this->pageTitle=Yii::app()->name . ' - Countries';
+
+$this->breadcrumbs=array(
+    'Countries',
+);
+
+$this->menu = array(
+    array('label' => 'Create country', 'url' => array('create')),
+    array('label' => 'Manage countries', 'url' => array('admin')),
+);
+?>
+<div class="atf-content clearfix"><br>
+    <h1>Countries</h1>
+    <?php $this->widget('zii.widgets.CListView', array(
+        'dataProvider'=>$dataProvider,
+        'itemView'=>'_view',
+        //'pager' => array('htmlOptions' => array('class'=>'pagination')),
+    )); ?>
+</div>
+<br><br>
+
+

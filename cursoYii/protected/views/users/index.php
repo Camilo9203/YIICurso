@@ -14,7 +14,7 @@ $this->menu = array(
 );
 ?>
 <div class="atf-content clearfix"><br>    
-    <h1>Usuarios registrados</h1>
+    <h1>Users</h1>
     <?php $this->widget('zii.widgets.CListView', array(
         'dataProvider'=>$dataProvider,
         'itemView'=>'_view',
