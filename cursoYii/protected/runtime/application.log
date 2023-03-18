@@ -6332,3 +6332,14 @@ Stack trace:
 REQUEST_URI=/YIICurso/cursoYii/countries/admin
 HTTP_REFERER=http://localhost/YIICurso/cursoYii/countries/index
 ---
+2023/03/18 17:30:53 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "enable". in C:\laragon\www\YIICurso\framework\web\CController.php:486
+Stack trace:
+#0 C:\laragon\www\YIICurso\framework\web\CController.php(270): CController->missingAction('enable')
+#1 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(282): CController->run('enable')
+#2 C:\laragon\www\YIICurso\framework\web\CWebApplication.php(141): CWebApplication->runController('countries/enabl...')
+#3 C:\laragon\www\YIICurso\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\laragon\www\YIICurso\cursoYii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/YIICurso/cursoYii/countries/enable/9
+HTTP_REFERER=http://localhost/YIICurso/cursoYii/countries/index
+---

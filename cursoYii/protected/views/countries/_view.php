@@ -16,5 +16,10 @@
         <span class="badge bg-primary rounded-pill">
             <?php echo CHtml::link(CHtml::encode('Ver'), array('view', 'id'=>$data->id)); ?>
         </span>
+        <a href="<?php echo $this->createUrl('enable', array('id' => $data->id))?>">
+            <span class="badge bg-<?php echo $data->status == 1? 'primary' : 'warning' ?> rounded-pill">
+                <?php echo $data->status == 1 ? 'Enable' : 'Disable'; ?>
+            </span>
+        </a>
     </li>
 </ol><br>

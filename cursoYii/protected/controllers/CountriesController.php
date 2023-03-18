@@ -104,6 +104,21 @@ class CountriesController extends Controller {
     }
 
     /**
+     * Update status a particular model.
+     * @param integer $id the ID of the model to be update status
+     */
+    public function actionEnable($id)
+    {
+        $model = $this->loadModel($id);
+        if ($model->status == 1)
+            $model->status = 0;
+        else 
+            $model->status = 1;
+        $model->save();
+        $this->redirect(array('index'));
+    }
+    
+    /**
      * Returns the data model based on the primary key given in the GET variable.
      * If the data model is not found, an HTTP exception will be raised.
      * @param integer $id the ID of the model to be loaded
