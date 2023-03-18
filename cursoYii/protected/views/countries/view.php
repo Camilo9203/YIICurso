@@ -26,7 +26,11 @@ $this->menu=array(
                 'attributes'=>array(
                     'id',
                     'name',
-                    'status',
+                    array(               // related city displayed as a link
+                        'label'=>'status',
+                        'type'=>'raw',
+                        'value'=> CHtml::encode($model->status==1 ? 'Enabled' : 'Disabled'),
+                    ),
                 ),
             )); ?>
             <br><br>

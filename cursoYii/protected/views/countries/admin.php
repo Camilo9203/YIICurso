@@ -51,7 +51,10 @@ $('.search-form form').submit(function(){
                 'columns'=>array(
                     'id',
                     'name',
-                    'status',
+                    array(               
+                        'name'=>'status',
+                        'value'=> 'CHtml::encode($data->status==1 ? "Enabled" : "Disabled")',
+                    ),
                     array(
                         'class'=>'CButtonColumn',
                     ),
