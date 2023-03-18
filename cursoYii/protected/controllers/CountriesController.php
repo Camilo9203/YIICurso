@@ -50,7 +50,12 @@ class CountriesController extends Controller {
      */
     public function actionIndex()
     {
-        $dataProvider=new CActiveDataProvider('Countries');
+        #Yii::import('application.test.*');
+        #echo include_once(Yii::getPathOfAlias('application').'/test.php'); // protected/
+        #echo Yii::getPathOfAlias('webroot').'<br>'; // root
+        #echo Yii::getPathOfAlias('ext').'<br>'; // protected/extension
+        #echo Yii::getPathOfAlias('zii').'<br>'; // framework/zii
+        $dataProvider = new CActiveDataProvider('Countries');
         $this->render('index',array(
             'dataProvider'=>$dataProvider,
         ));
