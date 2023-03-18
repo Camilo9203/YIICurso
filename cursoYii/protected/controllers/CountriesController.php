@@ -1,5 +1,3 @@
-<!-- Latest jQuery -->
-<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/jquery-1.12.4.min.js"></script>
 <?php
 
 class CountriesController extends Controller {
@@ -38,7 +36,7 @@ class CountriesController extends Controller {
                 'users'=>array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions'=>array('admin','delete'),
+                'actions'=>array('admin','delete', 'enable'),
                 'users'=>array('admin'),
             ),
             array('deny',  // deny all users
