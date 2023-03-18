@@ -19,6 +19,9 @@ $this->menu=array(
     <div class="row-fluid">
         <div class="span12">
             <br>
+            <!-- Message Session -->
+            <?php $this->renderPartial('_messages'); ?>
+            <!-- Content -->
             <h1>View Country: <?php echo $model->name; ?></h1>
             <?php $this->widget('zii.widgets.CDetailView', array(
                 'data'=>$model,

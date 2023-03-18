@@ -79,9 +79,12 @@ class CountriesController extends Controller {
         if(isset($_POST['Countries'])) {
             $model->attributes = $_POST['Countries'];
             
-            if($model->save()){
+            if($model->save()):
+                Yii::app()->user->setFlash('success', 'Country created!');
                 $this->redirect(array('index'));
-            }
+            else:
+                Yii::app()->user->setFlash('danger', 'Country not created!');
+            endif;
         }
 
         $this->render('create', array('model' => $model));
@@ -117,8 +120,12 @@ class CountriesController extends Controller {
         if(isset($_POST['Countries']))
         {
             $model->attributes=$_POST['Countries'];
-            if($model->save())
+            if($model->save()):
+                Yii::app()->user->setFlash('success', 'Country updated!');
                 $this->redirect(array('view','id'=>$model->id));
+            else:
+                Yii::app()->user->setFlash('danger', 'Country not updated!');
+            endif;
         }
 
         $this->render('update',array(
@@ -137,6 +144,7 @@ class CountriesController extends Controller {
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if(!isset($_GET['ajax']))
+            Yii::app()->user->setFlash('success', 'Country deleted!');
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
     }
 

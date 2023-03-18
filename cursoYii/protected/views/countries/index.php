@@ -16,6 +16,9 @@ $this->menu = array(
 );
 ?>
 <div class="atf-content clearfix"><br>
+    <!-- Message Session -->
+    <?php $this->renderPartial('_messages'); ?>
+    <!-- Content -->
     <h1>Countries</h1>
     <?php $this->widget('zii.widgets.CListView', array(
         'dataProvider'=>$dataProvider,
