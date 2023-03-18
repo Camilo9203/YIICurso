@@ -1,3 +1,5 @@
+<!-- Latest jQuery -->
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/jquery-1.12.4.min.js"></script>
 <?php
 /* @var $this SiteController */
 
@@ -22,10 +24,29 @@ $this->breadcrumbs=array(
             </div>
         </div>
     </div><!-- .atf-page-heading -->
+    <!-- BREADCRUMBS SECTION START-->
+    <?php if(isset($this->breadcrumbs) and $this->breadcrumbs !==array()):?>
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span12">
+                    <?php $this->widget('zii.widgets.CBreadcrumbs', array(
+                        'links'=>$this->breadcrumbs,
+                    )); ?><!-- breadcrumbs -->
+                </div>
+            </div>
+        </div>
+    <?php endif?>
+    <!-- BREADCRUMBS SECTION END-->
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <br>
+                <h1>About</h1>
 
-    <h1>About</h1>
-
-    <p>This is a "static" page. You may change the content of this page
-        by updating the file <code><?php echo __FILE__; ?></code>.</p>
+                <p>This is a "static" page. You may change the content of this page
+                    by updating the file <code><?php echo __FILE__; ?></code>.</p>
+                <br>
+            </div>
+        </div>
+    </div>
 </div>
-

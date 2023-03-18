@@ -30,7 +30,6 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-        $this->layout= "main";
 		$this->render('index');
 	}
 
@@ -53,23 +52,22 @@ class SiteController extends Controller
 	 */
 	public function actionContact()
 	{
-        $this->layout = 'main';
-		$model=new ContactForm;
+		$model = new ContactForm;
 		if(isset($_POST['ContactForm']))
 		{
 			$model->attributes=$_POST['ContactForm'];
 			if($model->validate())
 			{
-				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
-				$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
-				$headers="From: $name <{$model->email}>\r\n".
+				$name = '=?UTF-8?B?'.base64_encode($model->name).'?=';
+				$subject = '=?UTF-8?B?'.base64_encode($model->subject).'?=';
+				$headers = "From: $name <{$model->email}>\r\n".
 					"Reply-To: {$model->email}\r\n".
 					"MIME-Version: 1.0\r\n".
 					"Content-Type: text/plain; charset=UTF-8";
 
 				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
 				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
-				$this->refresh();
+                $this->refresh();
 			}
 		}
 		$this->render('contact',array('model'=>$model));
@@ -81,7 +79,7 @@ class SiteController extends Controller
 	public function actionLogin()
 	{
         $this->layout= "main";
-        $model=new LoginForm;
+        $model= new LoginForm;
 
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')

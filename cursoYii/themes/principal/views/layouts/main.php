@@ -1,7 +1,10 @@
+<?php /* @var $this Controller */ ?>
 <!DOCTYPE html>
-<html lang="zxx">
-<head>
+<html lang="es">
+<head
     <!-- Meta -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="es">>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -84,7 +87,9 @@
             <div class="container">
                 <div class="atf-main-header-in">
                     <div class="atf-main-header-left">
-                        <a class="atf-site-branding atf-white-logo" href="<?php echo Yii::app()->request->baseUrl; ?>>"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/img/logo.png" alt="Logo"></a>
+                        <a class="atf-site-branding atf-white-logo" href="<?php echo Yii::app()->request->baseUrl; ?>">
+                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/img/logo.png" alt="Logo">
+                        </a>
                     </div>
 
                     <div class="nav-right-part nav-right-part-mobile">
@@ -97,7 +102,6 @@
 
                     <div class="atf-main-header-right">
                         <div class="atf-nav">
-                     
                             <div id="mainmenu">
                                 <?php $this->widget('zii.widgets.CMenu',array(
                                     'htmlOptions' => array("class" => "atf-nav-list atf-onepage-nav"),
@@ -118,18 +122,6 @@
     </header>
     <!-- End Header Section -->
 
-    <?php if(isset($this->breadcrumbs) and $this->breadcrumbs !==array()):?>
-    <div class="container">
-        <div class="row-fluid">
-            <div class="span12">
-                <?php $this->widget('zii.widgets.CBreadcrumbs', array(
-                    'links'=>$this->breadcrumbs,
-                )); ?><!-- breadcrumbs -->
-            </div>
-        </div>
-    </div>
-    <?php endif?>
-    
     <?php echo $content ?>
     
     <!-- FOOTER SECTION START-->
@@ -214,9 +206,6 @@
     </footer><!--- END FOOTER -->
 </div>
 <!-- PAGE WRAPPER END-->
-
-<!-- Latest jQuery -->
-<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/jquery-1.12.4.min.js"></script>
 <!-- Latest compiled and minified Bootstrap -->
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/bootstrap/js/bootstrap.js"></script>
 <!-- modernizer JS -->

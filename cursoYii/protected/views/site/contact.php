@@ -24,6 +24,20 @@ $this->breadcrumbs=array(
             </div>
         </div>
     </div><!-- .atf-page-heading -->
+    <!-- BREADCRUMBS SECTION START-->
+    <?php if(isset($this->breadcrumbs) and $this->breadcrumbs !==array()):?>
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span12">
+                    <?php $this->widget('zii.widgets.CBreadcrumbs', array(
+                        'links'=>$this->breadcrumbs,
+                        'htmlOptions' => array('class' => 'breadcrumb'),
+                    )); ?><!-- breadcrumbs -->
+                </div>
+            </div>
+        </div>
+    <?php endif?>
+    <!-- BREADCRUMBS SECTION END-->
 
     <!-- CONTACT SECTION START-->
     <section id="contact" class="atf-contact-area atf-section-padding">
@@ -40,41 +54,38 @@ $this->breadcrumbs=array(
                 <div class="col-xl-6 col-lg-6 col-12 my-auto mx-auto">
                     <div class="contact mr-lg-5">
                         <h4>Stay Connected with us</h4>
-                        <?php if(Yii::app()->user->hasFlash('contact')): ?>
+                        <?php if(Yii::app()->user->hasFlash('contact')):?>
                             <div class="flash-success">
                                 <?php echo Yii::app()->user->getFlash('contact'); ?>
                             </div>
                         <?php else: ?>
-                            <form class="atf-contact-form form">
-                                <div class="row">
-                                    <?php $form=$this->beginWidget('CActiveForm', array(
-                                        'id'=>'contact-form',
-                                        'enableClientValidation'=>true,
-                                        'clientOptions'=>array(
+                            <div class="atf-contact-form form">
+                                <?php $form = $this->beginWidget('CActiveForm', array(
+                                    'id'=>'contact-form',
+                                    'enableClientValidation'=>true,
+                                    'clientOptions'=>array(
                                         'validateOnSubmit'=>true,
-                                        ),
-                                    )); ?>
-                                    <p>
-                                        If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
-                                    </p>
+                                    )
+                                )); ?>
+                                <div class="row">
+                                    <p>If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.</p>
                                     <p class="note">Fields with <span class="required">*</span> are required.</p>
-
                                     <?php echo $form->errorSummary($model, null, null, array('class'=>'alert alert-danger')); ?>
                                     <div class="form-group col-md-6">
                                         <?php echo $form->textField($model,'name', array('class' => 'form-control', 'placeholder' => 'Your Name')); ?>
-                                        <?php echo $form->error($model,'name'); ?>
+                                        <?php echo $form->error($model,'name', array('class' => 'text-danger')); ?>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <?php echo $form->textField($model,'email', array('class' => 'form-control', 'placeholder' => 'Your Email')); ?>
-                                        <?php echo $form->error($model,'email'); ?>
+                                        <?php echo $form->error($model,'email', array('class' => 'text-danger')); ?>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <?php echo $form->textField($model,'subject', array('class' => 'form-control', 'placeholder' => 'Subject')); ?>
-                                        <?php echo $form->error($model,'subject'); ?>
+                                        <?php echo $form->error($model,'subject', array('class' => 'text-danger')); ?>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50, 'class' => 'form-control', 'placeholder' => 'Your Message')); ?>
-                                        <?php echo $form->error($model,'body'); ?>
+                                        <?php echo $form->error($model,'body', array('class' => 'text-danger')); ?>
                                     </div>
                                     <?php if(CCaptcha::checkRequirements()): ?>
                                         <div class="row">
@@ -84,7 +95,7 @@ $this->breadcrumbs=array(
                                             </div>
                                             <div class="hint">Please enter the letters as they are shown in the image above.
                                                 <br/>Letters are not case-sensitive.</div>
-                                            <?php echo $form->error($model,'verifyCode'); ?>
+                                                <?php echo $form->error($model,'verifyCode', array('class' => 'text-danger')); ?>
                                         </div>
                                     <?php endif; ?>
                                     <div class="col-md-12">
@@ -92,9 +103,9 @@ $this->breadcrumbs=array(
                                             <?php echo CHtml::submitButton('Send Message', array('class' => 'btn atf-themes-btn')); ?>
                                         </div>
                                     </div>
-                                    <?php $this->endWidget(); ?>
                                 </div>
-                            </form>
+                                <?php $this->endWidget(); ?>
+                            </div>
                             <!-- <p class="form-message"></p> -->
                         <?php endif; ?>
                     </div>
@@ -130,76 +141,3 @@ $this->breadcrumbs=array(
     </div>
     <!-- Google Map end -->
 </div>
-<h1>Contact Us</h1>
-
-<?php if(Yii::app()->user->hasFlash('contact')): ?>
-
-<div class="flash-success">
-	<?php echo Yii::app()->user->getFlash('contact'); ?>
-</div>
-
-<?php else: ?>
-
-<p>
-If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
-</p>
-
-<div class="form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'contact-form',
-	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-)); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model); ?>
-	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name'); ?>
-		<?php echo $form->error($model,'name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email'); ?>
-		<?php echo $form->error($model,'email'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'subject'); ?>
-		<?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'subject'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'body'); ?>
-		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'body'); ?>
-	</div>
-
-	<?php if(CCaptcha::checkRequirements()): ?>
-	<div class="row">
-		<?php echo $form->labelEx($model,'verifyCode'); ?>
-		<div>
-		<?php $this->widget('CCaptcha'); ?>
-		<?php echo $form->textField($model,'verifyCode'); ?>
-		</div>
-		<div class="hint">Please enter the letters as they are shown in the image above.
-		<br/>Letters are not case-sensitive.</div>
-		<?php echo $form->error($model,'verifyCode'); ?>
-	</div>
-	<?php endif; ?>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Submit'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- form -->
-
-<?php endif; ?>

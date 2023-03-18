@@ -1,3 +1,5 @@
+<!-- Latest jQuery -->
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/js/jquery-1.12.4.min.js"></script>
 <!-- START HOME -->
 <section id="home">
     <div class="atf-slider atf-style1 atf-hero-slider1 atf-hero-slider2">
