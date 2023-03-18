@@ -32,7 +32,7 @@ $this->breadcrumbs=array(
 
                 <p>Please fill out the following form with your login credentials:</p>
 
-                <div class="form">
+                <div class="form contact mr-lg-5">
                     <?php $form=$this->beginWidget('CActiveForm', array(
                         'id'=>'login-form',
                         'enableClientValidation'=>true,
@@ -43,12 +43,12 @@ $this->breadcrumbs=array(
 
                     <p class="note">Fields with <span class="required">*</span> are required.</p>
 
-                    <div class="row">
+                    <div class="form-group col-md-12">
                         <?php echo $form->textField($model,'username', array('class' => 'form-control','placeholder' => 'Username')); ?>
                         <?php echo $form->error($model,'username', array('class' => 'text-danger')); ?>
                     </div>
 
-                    <div class="row">
+                    <div class="form-group col-md-12">
                         <?php echo $form->passwordField($model,'password', array('class' => 'form-control','placeholder' => 'Password')); ?>
                         <?php echo $form->error($model,'password', array('class' => 'text-danger')); ?>
                         <p class="hint">
@@ -56,14 +56,14 @@ $this->breadcrumbs=array(
                         </p>
                     </div>
 
-                    <div class="row rememberMe">
+                    <div class="form-group col-md-12">
                         <?php echo $form->checkBox($model,'rememberMe'); ?>
                         <?php echo $form->label($model,'rememberMe'); ?>
                         <?php echo $form->error($model,'rememberMe', array('class' => 'text-danger')); ?>
                     </div>
 
-                    <div class="row buttons">
-                        <?php echo CHtml::submitButton('Login', array('class' => 'btn btn-small atf-themes-btn')); ?>
+                    <div class="buttons">
+                        <?php echo CHtml::submitButton('Login', array('class' => 'atf-themes-btn btn-sm')); ?>
                     </div>
                     <br><br>
                     <?php $this->endWidget(); ?>
